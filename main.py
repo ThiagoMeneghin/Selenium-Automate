@@ -54,14 +54,26 @@ for nome in lista_nomes:
         lista_nomes[x] = nome.split('. ')[1] #Removendo número do nome do Canal
     x += 1
 
-for nome in nomes:
-    print(nome)
-    if nome in lista_nomes:
-        nomes.remove(nome)  #Removendo Canais que já possuem chamados da lista de novos chamados
-    
 #Print dos nomes de canais com chamado    
+for nome_lista in lista_nomes:
+    print(nome_lista)
+print("// Fim Canais Com chamado aberto")
+
+print(len(nomes))
 for nome in lista_nomes:
     print(nome)
+    if nome in nomes:
+        nomes.remove(nome)  #Removendo Canais que já possuem chamados da lista de novos chamados
+        print(nome+" --Canal Excluido")
+
+    
+print("//Fim Canais Excel")
+
+for nome_final in nomes:
+    print(nome_final)
+print("//Fim Canais sem chamado aberto e desatualizados")
+    
+
 
 # Add Chamado
 driver.get("https://suporte.bridsolucoes.com.br/chamados/addemmassa")
